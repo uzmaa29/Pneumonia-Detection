@@ -4,8 +4,7 @@ from flask import Flask, request, render_template
 from PIL import Image
 
 app = Flask(__name__)
-model = tf.keras.models.load_model('pneumonia_cnn.keras')
-
+model = tf.keras.models.load_model("models/pneumonia_cnn.keras")
 IMG_SIZE = (224, 224)
 
 
