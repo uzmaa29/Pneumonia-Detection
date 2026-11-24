@@ -1,10 +1,14 @@
+import os
 import numpy as np
 import tensorflow as tf
 from flask import Flask, request, render_template
 from PIL import Image
 
 app = Flask(__name__)
-model = tf.keras.models.load_model("models/pneumonia_cnn.keras")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = tf.keras.models.load_model(os.path.join(BASE_DIR, 'models', 'pneumonia_cnn.keras'))
+
 IMG_SIZE = (224, 224)
 
 
